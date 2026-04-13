@@ -73,6 +73,54 @@
             overflow: hidden;
         }
 
+        .js .reveal {
+            opacity: 0;
+            transform: translateY(26px);
+        }
+
+        .js .reveal.reveal-visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 700ms ease, transform 700ms ease;
+        }
+
+        .js .hero-title,
+        .js .hero-subtitle,
+        .js .hero-copy,
+        .js .hero-actions,
+        .js .hero-visual {
+            opacity: 0;
+            transform: translateY(24px);
+        }
+
+        .page-ready .hero-title,
+        .page-ready .hero-subtitle,
+        .page-ready .hero-copy,
+        .page-ready .hero-actions,
+        .page-ready .hero-visual {
+            opacity: 1;
+            transform: translateY(0);
+            transition-property: opacity, transform;
+            transition-duration: 800ms;
+            transition-timing-function: ease;
+        }
+
+        .page-ready .hero-subtitle {
+            transition-delay: 120ms;
+        }
+
+        .page-ready .hero-copy {
+            transition-delay: 240ms;
+        }
+
+        .page-ready .hero-actions {
+            transition-delay: 360ms;
+        }
+
+        .page-ready .hero-visual {
+            transition-delay: 420ms;
+        }
+
         .container {
             width: min(calc(100% - 3rem), var(--content-width));
             margin: 0 auto;
@@ -223,6 +271,7 @@
             background: var(--gradient-button);
             color: #ffffff;
             box-shadow: 0 24px 48px var(--color-shadow);
+            transition: transform 220ms ease, box-shadow 220ms ease, filter 220ms ease;
         }
 
         .button-secondary {
@@ -230,6 +279,22 @@
             background: transparent;
             border: 1px solid rgba(138, 146, 255, 0.3);
             color: var(--color-primary);
+            transition: background-color 220ms ease, transform 220ms ease;
+        }
+
+        .button-primary:hover,
+        .button-secondary:hover,
+        .nav-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .button-primary:hover {
+            filter: brightness(1.05);
+            box-shadow: 0 28px 54px var(--color-shadow);
+        }
+
+        .button-secondary:hover {
+            background: rgba(138, 146, 255, 0.08);
         }
 
         .hero-visual {
@@ -250,6 +315,13 @@
             object-fit: cover;
             filter: grayscale(1);
             opacity: 0.62;
+            transition: filter 420ms ease, opacity 420ms ease, transform 900ms ease;
+        }
+
+        .hero-image-frame:hover .hero-image {
+            filter: grayscale(0.1);
+            opacity: 0.92;
+            transform: scale(1.03);
         }
 
         .focus-card {
@@ -263,6 +335,8 @@
             background: rgba(19, 19, 19, 0.78);
             backdrop-filter: blur(20px);
             box-shadow: 0 30px 60px var(--color-shadow);
+            transition: transform 420ms ease;
+            animation: float-card 7s ease-in-out infinite;
         }
 
         .focus-label {
@@ -349,6 +423,12 @@
         .expertise-card {
             background: var(--color-background);
             padding: 2.5rem;
+            transition: background-color 240ms ease, transform 240ms ease;
+        }
+
+        .expertise-card:hover {
+            background: var(--color-surface-low);
+            transform: translateY(-4px);
         }
 
         .expertise-card .material-symbols-outlined {
@@ -380,6 +460,8 @@
             gap: 6rem;
             white-space: nowrap;
             opacity: 0.42;
+            width: max-content;
+            animation: ticker-scroll 24s linear infinite;
         }
 
         .ticker-item {
@@ -425,6 +507,36 @@
             font-size: 0.75rem;
             letter-spacing: 0.24em;
             text-transform: uppercase;
+        }
+
+        .footer-link {
+            transition: color 220ms ease, opacity 220ms ease;
+        }
+
+        .footer-link:hover {
+            color: var(--color-primary);
+            opacity: 1;
+        }
+
+        @keyframes ticker-scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-24%);
+            }
+        }
+
+        @keyframes float-card {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
         }
 
         @media (max-width: 1100px) {
@@ -501,7 +613,7 @@
                 <div class="container">
                     <div class="hero-grid">
                         <div>
-                            <div class="status-pill">
+                            <div class="status-pill reveal">
                                 <span class="status-pill-dot"></span>
                                 <span data-content="hero.status">Available for Internship 2024</span>
                             </div>
@@ -525,7 +637,7 @@
                                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuBG50-gtqyce82qI1djCTXADxuVtDknqIC34qOiX8wvuLwqLmf8Rg5NQc6tl0KDywDM9m41E-ztRzsK4tB7fLUDPHIB2Gis75fnoy4_zd2XKMsVJuXx8w_Swedumb_pibxftjBw8s3hbhUO1CbkzaZF-IgSK3oC7Fki7gP9AuLNrUDZmOMmFXnm_x7QGvUJaPHRblAv1f2sOEbPv08AuvRU7idgXWkmT0Cr0J90M9-4vdfZj0SckfbnLS3e-Co-jT-i6x9twBwv9fkp"
                                 >
                             </div>
-                            <aside class="focus-card" aria-label="Academic focus">
+                            <aside class="focus-card reveal" aria-label="Academic focus">
                                 <p class="focus-label" data-content="focus.label">Academic Focus</p>
                                 <p class="focus-title" data-content="focus.title">BBS Honors Program</p>
                                 <div class="focus-metrics">
@@ -544,7 +656,7 @@
                 </div>
             </section>
 
-            <section class="section-dark" id="expertise">
+            <section class="section-dark reveal" id="expertise">
                 <div class="container">
                     <div class="section-head">
                         <div>
@@ -579,7 +691,7 @@
                 </div>
             </section>
 
-            <section class="ticker" aria-label="Editorial statements">
+            <section class="ticker reveal" aria-label="Editorial statements">
                 <div class="container">
                     <div class="ticker-track">
                         <span class="ticker-item" data-content="ticker.0">Precision in Every Entry</span>
@@ -592,7 +704,7 @@
             </section>
         </main>
 
-        <footer class="site-footer">
+        <footer class="site-footer reveal">
             <div class="container">
                 <div class="footer-grid">
                     <div class="footer-brand" data-content="footer.brand">Suphal Bhattarai</div>
@@ -609,6 +721,8 @@
     </div>
 
     <script>
+        document.documentElement.classList.add("js");
+
         /*
          * Centralized editable content for the home page.
          * Future copy edits should start here instead of searching through the markup.
@@ -704,7 +818,40 @@
             });
         }
 
+        /*
+         * Trigger the hero entrance once the browser has painted the initial layout.
+         * Keeping this separate from content injection avoids racing the first render.
+         */
+        function runHeroEntrance() {
+            window.requestAnimationFrame(() => {
+                document.body.classList.add("page-ready");
+            });
+        }
+
+        /*
+         * Reveal lower sections as they enter the viewport.
+         * This keeps motion limited to major blocks instead of animating every small element.
+         */
+        function setupScrollReveals() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("reveal-visible");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.16
+            });
+
+            document.querySelectorAll(".reveal").forEach((node) => {
+                observer.observe(node);
+            });
+        }
+
         injectEditableContent();
+        runHeroEntrance();
+        setupScrollReveals();
     </script>
 </body>
 </html>
