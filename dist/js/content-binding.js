@@ -29,7 +29,52 @@
         });
     }
 
+    /*
+     * Shared motion helper for inner editorial pages.
+     * Pages opt in by adding the `reveal` class to sections that should enter softly as they scroll into view.
+     */
+    function initializePageMotion() {
+        var revealNodes;
+
+        document.documentElement.classList.add("js");
+        revealNodes = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
+
+        if (!revealNodes.length) {
+            return;
+        }
+
+        /*
+         * Use IntersectionObserver so sections reveal only when they approach the viewport.
+         * A graceful fallback makes every section visible immediately if the API is unavailable.
+         */
+        if (!("IntersectionObserver" in window)) {
+            revealNodes.forEach(function (node) {
+                node.classList.add("reveal-visible");
+            });
+            return;
+        }
+
+        var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (!entry.isIntersecting) {
+                    return;
+                }
+
+                entry.target.classList.add("reveal-visible");
+                observer.unobserve(entry.target);
+            });
+        }, {
+            rootMargin: "0px 0px -12% 0px",
+            threshold: 0.15
+        });
+
+        revealNodes.forEach(function (node) {
+            observer.observe(node);
+        });
+    }
+
     window.editorialContent = {
-        bindPageContent: bindPageContent
+        bindPageContent: bindPageContent,
+        initializePageMotion: initializePageMotion
     };
 }());

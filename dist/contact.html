@@ -30,7 +30,7 @@
 
         <main class="page-main">
             <div class="container">
-                <header class="page-header">
+                <header class="page-header reveal">
                     <div>
                         <p class="section-label" data-content="hero.kicker">Professional Contact</p>
                         <h1 class="page-title" data-content="hero.title">Open for audit, consulting, and structured project discussions.</h1>
@@ -43,7 +43,7 @@
                     </div>
                 </header>
 
-                <section class="contact-grid">
+                <section class="contact-grid reveal" style="--reveal-delay: 0.05s;">
                     <article class="form-card">
                         <div>
                             <p class="section-label" data-content="form.kicker">Inquiry Form</p>
@@ -81,7 +81,7 @@
                     </article>
 
                     <aside class="sidebar-stack">
-                        <section class="card surface-highest panel-padding-xl">
+                        <section class="card surface-highest panel-padding-xl reveal" style="--reveal-delay: 0.1s;">
                             <p class="section-label" data-content="direct.kicker">Direct Lines</p>
                             <div class="contact-link-card">
                                 <div class="contact-icon"><span class="material-symbols-outlined">mail</span></div>
@@ -99,7 +99,7 @@
                             </div>
                         </section>
 
-                        <section class="card surface-low panel-padding-lg">
+                        <section class="card surface-low panel-padding-lg reveal" style="--reveal-delay: 0.15s;">
                             <h2 class="panel-title" data-content="services.heading">Discussion areas</h2>
                             <div class="tag-row">
                                 <span class="tag" data-content="services.items.0">Audit assignments</span>
@@ -110,7 +110,7 @@
                             </div>
                         </section>
 
-                        <section class="card surface-lowest panel-padding-lg">
+                        <section class="card surface-lowest panel-padding-lg reveal" style="--reveal-delay: 0.2s;">
                             <h2 class="panel-title" data-content="note.heading">Response note</h2>
                             <p class="panel-copy" data-content="note.copy">Clear, well-scoped inquiries receive the fastest response. Include the sector context, objective, and expected support so the reply can be equally structured.</p>
                         </section>
@@ -198,6 +198,7 @@
         };
 
         window.editorialContent.bindPageContent(pageContent);
+        window.editorialContent.initializePageMotion();
     </script>
 </body>
 </html>

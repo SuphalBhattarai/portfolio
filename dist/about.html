@@ -30,7 +30,7 @@
 
         <main class="page-main">
             <div class="container">
-                <header class="page-header">
+                <header class="page-header reveal">
                     <div>
                         <p class="section-label" data-content="hero.kicker">Professional Profile</p>
                         <h1 class="page-title" data-content="hero.title">Structured judgment shaped by cross-sector audit work.</h1>
@@ -43,7 +43,7 @@
                     </div>
                 </header>
 
-                <section class="editorial-grid" aria-label="About overview">
+                <section class="editorial-grid reveal" aria-label="About overview" style="--reveal-delay: 0.05s;">
                     <article class="card surface-low panel-padding-xl" style="grid-column: span 7;">
                         <span class="material-symbols-outlined panel-icon">analytics</span>
                         <h2 class="panel-title" data-content="overview.primary.title">Audit work anchored in sector breadth and disciplined execution.</h2>
@@ -55,7 +55,7 @@
                     </aside>
                 </section>
 
-                <section class="detail-grid" style="margin-top: 2rem; grid-template-columns: repeat(3, minmax(0, 1fr));">
+                <section class="detail-grid reveal" style="margin-top: 2rem; grid-template-columns: repeat(3, minmax(0, 1fr)); --reveal-delay: 0.1s;">
                     <article class="card surface-high panel-padding-lg">
                         <span class="material-symbols-outlined panel-icon">domain</span>
                         <h3 class="panel-title" data-content="pillars.0.title">Sector Understanding</h3>
@@ -73,7 +73,7 @@
                     </article>
                 </section>
 
-                <section style="margin-top: 5rem;">
+                <section class="reveal" style="margin-top: 5rem; --reveal-delay: 0.15s;">
                     <h2 class="section-heading" data-content="timeline.heading">The professional ledger</h2>
                     <div class="timeline">
                         <article class="timeline-item">
@@ -112,7 +112,7 @@
                     </div>
                 </section>
 
-                <section class="card surface-lowest panel-padding-xl" style="margin-top: 5rem;">
+                <section class="card surface-lowest panel-padding-xl reveal" style="margin-top: 5rem; --reveal-delay: 0.2s;">
                     <h2 class="section-heading" data-content="toolkit.heading">Practice toolkit</h2>
                     <div class="ledger-columns">
                         <div>
@@ -145,7 +145,7 @@
                     </div>
                 </section>
 
-                <section class="cta-panel">
+                <section class="cta-panel reveal" style="--reveal-delay: 0.25s;">
                     <div>
                         <h2 class="cta-title" data-content="cta.title">Open to disciplined audit work and structured technical collaboration.</h2>
                         <p class="panel-copy" data-content="cta.copy">The same focus applied to audit quality also shapes how I approach reporting, documentation, and GitHub-based project work.</p>
@@ -281,6 +281,7 @@
         };
 
         window.editorialContent.bindPageContent(pageContent);
+        window.editorialContent.initializePageMotion();
     </script>
 </body>
 </html>
