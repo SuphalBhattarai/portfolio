@@ -21,6 +21,7 @@
                         <a class="nav-link" data-content="nav.home" href="index.html">Home</a>
                         <a class="nav-link nav-link-active" data-content="nav.about" href="about.html">About</a>
                         <a class="nav-link" data-content="nav.achievements" href="achievements.html">Achievements</a>
+                        <a class="nav-link" data-content="nav.cv" href="cv.html">CV</a>
                         <a class="nav-link" data-content="nav.contact" href="contact.html">Contact</a>
                     </div>
                     <a class="nav-button" data-content="nav.cta" href="contact.html">Hire Me</a>
@@ -36,11 +37,7 @@
                         <h1 class="page-title" data-content="hero.title">Structured judgment shaped by cross-sector audit work.</h1>
                         <p class="page-copy" data-content="hero.copy">I work across complex engagements where compliance, documentation quality, sector knowledge, and communication discipline all matter equally. My professional approach combines formal audit execution with a growing portfolio of technical and documentation-led projects.</p>
                     </div>
-                    <div>
-                        <div class="page-counter" data-content="hero.index">02.
-                            <span class="page-counter-label" data-content="hero.indexLabel">Background & Practice</span>
-                        </div>
-                    </div>
+                    <div class="section-index" data-content="hero.index">02 // Background & Practice</div>
                 </header>
 
                 <section class="editorial-grid reveal" aria-label="About overview" style="--reveal-delay: 0.05s;">
@@ -50,8 +47,10 @@
                         <p class="panel-copy" data-content="overview.primary.copy">My work has included audit exposure across banking, manufacturing, insurance, foreign transactions, information technology, education, non-profit organizations, and consulting. This range has strengthened my ability to read business context quickly, identify material issues, and document findings in a way that supports both technical review and client decision-making.</p>
                     </article>
 
-                    <aside class="card surface-high panel-padding-lg" style="grid-column: span 5;">
-                        <img alt="Portrait of Suphal Bhattarai" class="profile-portrait" src="images/profile.jpeg">
+                    <aside style="grid-column: span 5;">
+                        <div class="hero-image-frame">
+                            <img alt="Portrait of Suphal Bhattarai" class="hero-image" src="images/profile.jpeg">
+                        </div>
                     </aside>
                 </section>
 
@@ -152,6 +151,7 @@
                     </div>
                     <div class="link-row">
                         <a class="button-primary" data-content="cta.primary" href="contact.html">Get in touch</a>
+                        <a class="button-secondary" data-content="cta.secondary" href="cv.html">Download CV</a>
                     </div>
                 </section>
             </div>
@@ -165,7 +165,8 @@
                         <a class="footer-link" data-content="footer.links.0" href="index.html">Home</a>
                         <a class="footer-link" data-content="footer.links.1" href="about.html">About</a>
                         <a class="footer-link" data-content="footer.links.2" href="achievements.html">Achievements</a>
-                        <a class="footer-link" data-content="footer.links.3" href="contact.html">Contact</a>
+                        <a class="footer-link" data-content="footer.links.3" href="cv.html">CV</a>
+                        <a class="footer-link" data-content="footer.links.4" href="contact.html">Contact</a>
                     </div>
                     <div class="footer-meta" data-content="footer.meta">Formal audit perspective with structured technical work.</div>
                 </div>
@@ -185,6 +186,7 @@
                 home: "Home",
                 about: "About",
                 achievements: "Achievements",
+                cv: "CV",
                 contact: "Contact",
                 cta: "Hire Me"
             },
@@ -192,8 +194,7 @@
                 kicker: "Professional Profile",
                 title: "Structured judgment shaped by cross-sector audit work.",
                 copy: "I work across complex engagements where compliance, documentation quality, sector knowledge, and communication discipline all matter equally. My professional approach combines formal audit execution with a growing portfolio of technical and documentation-led projects.",
-                index: "02.",
-                indexLabel: "Background & Practice"
+                index: "02 // Background & Practice"
             },
             overview: {
                 primary: {
@@ -271,11 +272,12 @@
             cta: {
                 title: "Open to disciplined audit work and structured technical collaboration.",
                 copy: "The same focus applied to audit quality also shapes how I approach reporting, documentation, and GitHub-based project work.",
-                primary: "Get in touch"
+                primary: "Get in touch",
+                secondary: "Download CV"
             },
             footer: {
                 brand: "Suphal Bhattarai",
-                links: ["Home", "About", "Achievements", "Contact"],
+                links: ["Home", "About", "Achievements", "CV", "Contact"],
                 meta: "Formal audit perspective with structured technical work."
             }
         };

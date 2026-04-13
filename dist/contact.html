@@ -21,6 +21,7 @@
                         <a class="nav-link" data-content="nav.home" href="index.html">Home</a>
                         <a class="nav-link" data-content="nav.about" href="about.html">About</a>
                         <a class="nav-link" data-content="nav.achievements" href="achievements.html">Achievements</a>
+                        <a class="nav-link" data-content="nav.cv" href="cv.html">CV</a>
                         <a class="nav-link nav-link-active" data-content="nav.contact" href="contact.html">Contact</a>
                     </div>
                     <a class="nav-button" data-content="nav.cta" href="contact.html">Hire Me</a>
@@ -36,48 +37,34 @@
                         <h1 class="page-title" data-content="hero.title">Open for audit, consulting, and structured project discussions.</h1>
                         <p class="page-copy" data-content="hero.copy">If the work requires disciplined documentation, a professional audit perspective, or a cleaner portfolio presentation, you can reach me directly through the channels below. I review inquiries with the same structure I bring to assignments and project work.</p>
                     </div>
-                    <div>
-                        <div class="page-counter" data-content="hero.index">04.
-                            <span class="page-counter-label" data-content="hero.indexLabel">Direct Contact</span>
-                        </div>
-                    </div>
+                    <div class="section-index" data-content="hero.index">04 // Direct Contact</div>
                 </header>
 
                 <section class="contact-grid reveal" style="--reveal-delay: 0.05s;">
                     <article class="form-card">
                         <div>
-                            <p class="section-label" data-content="form.kicker">Inquiry Form</p>
-                            <h2 class="section-heading" data-content="form.heading">Dispatch a structured inquiry</h2>
-                            <p class="panel-copy" data-content="form.copy">Use this outline for audit inquiries, consulting discussions, documentation support, or portfolio and GitHub conversations.</p>
+                            <p class="section-label" data-content="form.kicker">Professional Introduction</p>
+                            <h2 class="section-heading" data-content="form.heading">Start the conversation through direct contact.</h2>
+                            <p class="panel-copy" data-content="form.copy">This website is a static portfolio, so messages are handled directly through email or phone. Reach out with the sector context, objective, and timeline, and I will respond with the appropriate next step.</p>
                         </div>
-                        <form action="#" method="post">
-                            <div class="form-grid">
-                                <div>
-                                    <label class="field-label" data-content="form.fields.name.label" for="contact-name">Full Name</label>
-                                    <input class="field-input" id="contact-name" placeholder="Name / Organization" type="text">
-                                </div>
-                                <div>
-                                    <label class="field-label" data-content="form.fields.email.label" for="contact-email">Email Address</label>
-                                    <input class="field-input" id="contact-email" placeholder="name@example.com" type="email">
-                                </div>
+                        <div class="ledger-list" style="margin-top: 2rem;">
+                            <div class="ledger-item">
+                                <strong data-content="form.points.0.label">Best for</strong>
+                                <span class="meta-text" data-content="form.points.0.value">Audit roles, consulting discussions, documentation support, and structured technical collaboration.</span>
                             </div>
-                            <div style="margin-top: 1.5rem;">
-                                <label class="field-label" data-content="form.fields.service.label" for="contact-service">Discussion Type</label>
-                                <select class="field-select" id="contact-service">
-                                    <option data-content="form.fields.service.options.0">External audit or sector discussion</option>
-                                    <option data-content="form.fields.service.options.1">Controls, documentation, or reporting support</option>
-                                    <option data-content="form.fields.service.options.2">GitHub project or portfolio discussion</option>
-                                    <option data-content="form.fields.service.options.3">General professional inquiry</option>
-                                </select>
+                            <div class="ledger-item">
+                                <strong data-content="form.points.1.label">Helpful context</strong>
+                                <span class="meta-text" data-content="form.points.1.value">Include your organization, sector, expected timeline, and the kind of support you are looking for.</span>
                             </div>
-                            <div style="margin-top: 1.5rem;">
-                                <label class="field-label" data-content="form.fields.details.label" for="contact-details">Project Details</label>
-                                <textarea class="field-textarea" id="contact-details" placeholder="Outline the context, timeline, or support you are looking for."></textarea>
+                            <div class="ledger-item">
+                                <strong data-content="form.points.2.label">Preferred channel</strong>
+                                <span class="meta-text" data-content="form.points.2.value">Email is best for structured summaries, while phone works well for direct discussion and quick clarification.</span>
                             </div>
-                            <div class="link-row" style="margin-top: 1.5rem;">
-                                <button class="button-primary" data-content="form.submit" type="submit">Send Inquiry</button>
-                            </div>
-                        </form>
+                        </div>
+                        <div class="link-row" style="margin-top: 2rem;">
+                            <a class="button-primary" data-content="form.primary" href="mailto:suphalbhattarai4@gmail.com">Email directly</a>
+                            <a class="button-secondary" data-content="form.secondary" href="tel:+9779862251305">Call directly</a>
+                        </div>
                     </article>
 
                     <aside class="sidebar-stack">
@@ -127,7 +114,8 @@
                         <a class="footer-link" data-content="footer.links.0" href="index.html">Home</a>
                         <a class="footer-link" data-content="footer.links.1" href="about.html">About</a>
                         <a class="footer-link" data-content="footer.links.2" href="achievements.html">Achievements</a>
-                        <a class="footer-link" data-content="footer.links.3" href="contact.html">Contact</a>
+                        <a class="footer-link" data-content="footer.links.3" href="cv.html">CV</a>
+                        <a class="footer-link" data-content="footer.links.4" href="contact.html">Contact</a>
                     </div>
                     <div class="footer-meta" data-content="footer.meta">Available for formal and well-scoped professional discussions.</div>
                 </div>
@@ -147,6 +135,7 @@
                 home: "Home",
                 about: "About",
                 achievements: "Achievements",
+                cv: "CV",
                 contact: "Contact",
                 cta: "Hire Me"
             },
@@ -154,28 +143,28 @@
                 kicker: "Professional Contact",
                 title: "Open for audit, consulting, and structured project discussions.",
                 copy: "If the work requires disciplined documentation, a professional audit perspective, or a cleaner portfolio presentation, you can reach me directly through the channels below. I review inquiries with the same structure I bring to assignments and project work.",
-                index: "04.",
-                indexLabel: "Direct Contact"
+                index: "04 // Direct Contact"
             },
             form: {
-                kicker: "Inquiry Form",
-                heading: "Dispatch a structured inquiry",
-                copy: "Use this outline for audit inquiries, consulting discussions, documentation support, or portfolio and GitHub conversations.",
-                fields: {
-                    name: { label: "Full Name" },
-                    email: { label: "Email Address" },
-                    service: {
-                        label: "Discussion Type",
-                        options: [
-                            "External audit or sector discussion",
-                            "Controls, documentation, or reporting support",
-                            "GitHub project or portfolio discussion",
-                            "General professional inquiry"
-                        ]
+                kicker: "Professional Introduction",
+                heading: "Start the conversation through direct contact.",
+                copy: "This website is a static portfolio, so messages are handled directly through email or phone. Reach out with the sector context, objective, and timeline, and I will respond with the appropriate next step.",
+                points: [
+                    {
+                        label: "Best for",
+                        value: "Audit roles, consulting discussions, documentation support, and structured technical collaboration."
                     },
-                    details: { label: "Project Details" }
-                },
-                submit: "Send Inquiry"
+                    {
+                        label: "Helpful context",
+                        value: "Include your organization, sector, expected timeline, and the kind of support you are looking for."
+                    },
+                    {
+                        label: "Preferred channel",
+                        value: "Email is best for structured summaries, while phone works well for direct discussion and quick clarification."
+                    }
+                ],
+                primary: "Email directly",
+                secondary: "Call directly"
             },
             direct: {
                 kicker: "Direct Lines",
@@ -192,7 +181,7 @@
             },
             footer: {
                 brand: "Suphal Bhattarai",
-                links: ["Home", "About", "Achievements", "Contact"],
+                links: ["Home", "About", "Achievements", "CV", "Contact"],
                 meta: "Available for formal and well-scoped professional discussions."
             }
         };

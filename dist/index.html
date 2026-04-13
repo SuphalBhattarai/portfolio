@@ -21,6 +21,7 @@
                         <a class="nav-link nav-link-active" data-content="nav.home" href="#home">Home</a>
                         <a class="nav-link" data-content="nav.about" href="about.html">About</a>
                         <a class="nav-link" data-content="nav.achievements" href="achievements.html">Achievements</a>
+                        <a class="nav-link" data-content="nav.cv" href="cv.html">CV</a>
                         <a class="nav-link" data-content="nav.contact" href="contact.html">Contact</a>
                     </div>
                     <a class="nav-button" data-content="nav.cta" href="contact.html">Hire Me</a>
@@ -44,8 +45,8 @@
                             <p class="hero-subtitle" data-content="hero.subtitle">Chartered Accountant Candidate | BBS 4th Year Student</p>
                             <p class="hero-copy" data-content="hero.copy">Bridging the gap between classical financial stewardship and modern digital auditing. Pursuing precision in the ledger and innovation in the ecosystem.</p>
                             <div class="hero-actions">
-                                <button class="button-primary" data-content="hero.primaryCta" type="button">View My Work</button>
-                                <button class="button-secondary" data-content="hero.secondaryCta" type="button">Download CV</button>
+                                <a class="button-primary" data-content="hero.primaryCta" href="achievements.html">View My Work</a>
+                                <a class="button-secondary" data-content="hero.secondaryCta" href="cv.html">Download CV</a>
                             </div>
                         </div>
 
@@ -55,15 +56,15 @@
                             </div>
                             <aside class="focus-card reveal" aria-label="Academic focus">
                                 <p class="focus-label" data-content="focus.label">Academic Focus</p>
-                                <p class="focus-title" data-content="focus.title">BBS Honors Program</p>
+                                <p class="focus-title" data-content="focus.title">BBS Program</p>
                                 <div class="focus-metrics">
                                     <div>
-                                        <span class="focus-value" data-content="focus.metricValue">3.9</span>
-                                        <span data-content="focus.metricLabel">Cumulative GPA Index</span>
+                                        <span class="focus-value" data-runtime-content="focus.metricValue">1.3</span>
+                                        <span data-content="focus.metricLabel">Years of experience</span>
                                     </div>
                                     <div>
-                                        <span class="focus-value" data-content="focus.metricValueAlt">24</span>
-                                        <span data-content="focus.metricLabelAlt">Months to membership</span>
+                                        <span class="focus-value" data-content="focus.metricValueAlt">8</span>
+                                        <span data-content="focus.metricLabelAlt">Sectors covered</span>
                                     </div>
                                 </div>
                             </aside>
@@ -128,7 +129,8 @@
                         <a class="footer-link" data-content="footer.links.0" href="index.html">Home</a>
                         <a class="footer-link" data-content="footer.links.1" href="about.html">About</a>
                         <a class="footer-link" data-content="footer.links.2" href="achievements.html">Achievements</a>
-                        <a class="footer-link" data-content="footer.links.3" href="contact.html">Contact</a>
+                        <a class="footer-link" data-content="footer.links.3" href="cv.html">CV</a>
+                        <a class="footer-link" data-content="footer.links.4" href="contact.html">Contact</a>
                     </div>
                     <div class="footer-meta" data-content="footer.meta">Formal audit perspective with structured technical work.</div>
                 </div>
@@ -150,6 +152,7 @@
                 home: "Home",
                 about: "About",
                 achievements: "Achievements",
+                cv: "CV",
                 contact: "Contact",
                 cta: "Hire Me"
             },
@@ -164,11 +167,11 @@
             },
             focus: {
                 label: "Academic Focus",
-                title: "BBS Honors Program",
-                metricValue: "3.9",
-                metricLabel: "Cumulative GPA Index",
-                metricValueAlt: "24",
-                metricLabelAlt: "Months to membership"
+                title: "BBS Program",
+                metricValue: "",
+                metricLabel: "Years of experience",
+                metricValueAlt: "8",
+                metricLabelAlt: "Sectors covered"
             },
             expertise: {
                 heading: "Domain Expertise",
@@ -202,7 +205,7 @@
             ],
             footer: {
                 brand: "Suphal Bhattarai",
-                links: ["Home", "About", "Achievements", "Contact"],
+                links: ["Home", "About", "Achievements", "CV", "Contact"],
                 meta: "Formal audit perspective with structured technical work."
             }
         };
@@ -238,7 +241,27 @@
             });
         }
 
+        /*
+         * Calculate elapsed experience from January 2024 in decimal years using the visitor's local date.
+         * This keeps the headline metric current on a static site without any backend support.
+         */
+        function updateExperienceMetric() {
+            const experienceNode = document.querySelector("[data-runtime-content='focus.metricValue']");
+
+            if (!experienceNode) {
+                return;
+            }
+
+            const startDate = new Date(2024, 0, 1);
+            const today = new Date();
+            const elapsedMilliseconds = Math.max(today.getTime() - startDate.getTime(), 0);
+            const elapsedYears = elapsedMilliseconds / (365.25 * 24 * 60 * 60 * 1000);
+
+            experienceNode.textContent = elapsedYears.toFixed(1);
+        }
+
         window.editorialContent.bindPageContent(pageContent);
+        updateExperienceMetric();
         runHeroEntrance();
         setupScrollReveals();
     </script>
