@@ -226,6 +226,13 @@
          * This keeps motion limited to major blocks instead of animating every small element.
          */
         function setupScrollReveals() {
+            if (!("IntersectionObserver" in window)) {
+                document.querySelectorAll(".reveal").forEach((node) => {
+                    node.classList.add("reveal-visible");
+                });
+                return;
+            }
+
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
