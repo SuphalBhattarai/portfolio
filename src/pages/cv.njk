@@ -48,7 +48,7 @@ activePage: cv
                     </div>
                     <p class="page-copy">{{ pageData.summary.copy }}</p>
                     <div class="cv-print-actions">
-                        <button class="button-primary" id="print-cv" type="button">{{ pageData.summary.primary }}</button>
+                        <a class="button-primary" href="{{ profile.links.cvPdf }}" rel="noreferrer" target="_blank">{{ pageData.summary.primary }}</a>
                         <a class="button-secondary" href="{{ profile.links.contact }}">{{ pageData.summary.secondary }}</a>
                     </div>
                     <p class="cv-inline-note">{{ pageData.summary.note }}</p>
@@ -70,6 +70,17 @@ activePage: cv
                     </article>
                     {% endfor %}
                 </aside>
+            </section>
+
+            <section class="cv-competency-strip reveal reveal-delay-2">
+                <div class="cv-strip-head">
+                    <p class="cv-section-kicker">{{ pageData.coreCompetencies.kicker }}</p>
+                </div>
+                <div class="cv-chip-row">
+                    {% for item in pageData.coreCompetencies.items %}
+                    <span class="cv-chip">{{ item }}</span>
+                    {% endfor %}
+                </div>
             </section>
 
             <section class="cv-section cv-section-spacious cv-page-break-before reveal reveal-delay-3b">
@@ -168,6 +179,11 @@ activePage: cv
                     </article>
                     {% endfor %}
                 </div>
+            </section>
+
+            <section class="cv-last-updated reveal reveal-delay-6">
+                <span class="cv-last-updated-label">{{ pageData.lastUpdatedLabel }}</span>
+                <span class="cv-last-updated-value">{{ profile.site.cvLastUpdated }}</span>
             </section>
         </div>
     </div>

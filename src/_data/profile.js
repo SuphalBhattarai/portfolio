@@ -14,6 +14,50 @@ module.exports = {
         cvPdf: "documents/CV.pdf",
         cvLastUpdated: "April 17, 2026"
     },
+    recruiter: {
+        summary: "Best suited for audit, finance, and controls-oriented roles in banking, finance, and information technology environments.",
+        proofStrip: [
+            "14 sectors covered",
+            "Since January 2024",
+            "NFRS / IFRS exposure",
+            "Reports to KMP and audit partners"
+        ],
+        whyHire: [
+            {
+                title: "Cross-sector audit exposure",
+                copy: "Exposure across fourteen sectors supports faster risk reading, sector-context judgment, and more adaptable audit execution."
+            },
+            {
+                title: "Strong audit file handling",
+                copy: "Working papers, reconciliations, schedules, and support files are prepared in a form that remains complete, traceable, and easy to review."
+            },
+            {
+                title: "Banking systems and accounting software exposure",
+                copy: "Experience includes proprietary CRM, CBS, and HR banking systems together with Tally, Rigo, and documentation-led reporting workflows."
+            }
+        ],
+        sectorExamples: [
+            {
+                title: "Banking",
+                copy: "Exposure includes expected credit loss considerations, control-sensitive workflows, and reporting structures that require disciplined support and clear documentation."
+            },
+            {
+                title: "Manufacturing",
+                copy: "Operational and inventory-led environments required closer attention to stock-related support, process understanding, and practical review of revenue and cost flows."
+            },
+            {
+                title: "Listed and private entities",
+                copy: "Different ownership and governance settings strengthened sensitivity to reporting quality, review expectations, and the presentation of support for management and partner discussion."
+            }
+        ],
+        technicalAreas: [
+            "Revenue recognition",
+            "Expected Credit Loss (ECL)",
+            "Provisions",
+            "Working papers and reconciliations",
+            "Management and partner reporting"
+        ]
+    },
     nav: {
         brand: "Suphal Bhattarai",
         home: "Home",

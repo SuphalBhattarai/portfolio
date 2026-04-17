@@ -7,45 +7,42 @@ module.exports = {
             titleLineOne: "Suphal",
             titleLineTwo: "Bhattarai",
             subtitle: "Audit Associate | Experience since January 2024",
-            copy: "Audit Associate with live experience since January 2024, exposure across 14 sectors, and a current focus on banking, finance, and IT opportunities. Work includes audit, financial, and consulting assignments performed within NFRS and IFRS reporting contexts.",
-            primaryCta: "View Experience",
-            secondaryCta: "Download CV"
+            copy: "Audit Associate with live experience since January 2024, exposure across 14 sectors, and current interest in banking, finance, and information technology opportunities. Work includes financial statement review, ledger analysis, reconciliations, audit support, and partner reporting support performed within NFRS and IFRS reporting contexts.",
+            primaryCta: "View CV"
         },
         focus: {
-            label: "Current proof",
-            title: "Experience and sector breadth",
+            label: "Recruiter Summary",
+            title: "Best suited for audit, finance, and controls-oriented roles in banking, finance, and information technology.",
             metricLabel: "Years since January 2024",
-            metricLabelAlt: "Sectors covered"
+            metricLabelAlt: "Sectors covered",
+            summaryLabel: "Professional fit"
+        },
+        whyHire: {
+            heading: "Why hire me",
+            index: "01 // Hiring Signal"
         },
         expertise: {
-            heading: "Audit Proof",
-            copy: "Core facts that define the profile at a glance.",
-            index: "01 // Audit Proof"
+            heading: "Key Technical Areas",
+            copy: "Areas where sector context, accounting judgment, and documentation discipline matter most.",
+            index: "02 // Technical Areas"
         },
         cards: [
             {
-                title: "Standards and scope",
-                copy: "Audit, financial, and consulting assignments performed within NFRS and IFRS reporting environments."
+                title: "Revenue recognition",
+                copy: "Assignments required attention to how recognition timing, supporting schedules, and sector context affect reporting treatment and audit response."
             },
             {
-                title: "Audit tasks",
-                copy: "Planning support, testing, evidence review, ledger analysis, reconciliations, and reporting support."
+                title: "Expected Credit Loss (ECL)",
+                copy: "Banking-related exposure developed stronger awareness of control-sensitive workflows, supporting assumptions, and review expectations around ECL."
             },
             {
-                title: "Systems exposure",
-                copy: "Proprietary CRM, CBS, and HR platforms together with local tools such as Tally and Rigo."
+                title: "Provisions",
+                copy: "Work across sectors strengthened judgment on support quality, assumptions, and how provisions should be documented, challenged, and communicated."
             },
             {
-                title: "Reporting line",
-                copy: "Reported to key management personnel and audit partners while also reviewing junior work."
+                title: "Working papers and reporting",
+                copy: "File preparation, reconciliations, management communication, and partner reporting support remain central strengths across assignments."
             }
-        ],
-        ticker: [
-            "14 sectors covered",
-            "NFRS and IFRS aligned work",
-            "Audit, financial, and consulting assignments",
-            "Reporting to management and partners",
-            "14 sectors covered"
         ],
         footer: {
             links: ["Home", "About", "Achievements", "CV", "Contact"],
@@ -87,7 +84,7 @@ module.exports = {
                 period: "Current Focus",
                 role: "Audit, financial, and consulting assignments",
                 title: "Work delivered across planning, fieldwork, review support, and reporting",
-                copy: "Assignments include audit support, financial review, consulting-oriented work, evidence evaluation, ledger testing, reconciliations, and reporting preparation across environments where standards, sector context, and file quality all matter."
+                copy: "Assignments include financial statement review, audit support, consulting-oriented work, evidence evaluation, ledger analysis, reconciliations, and reporting preparation across environments where standards, sector context, and file quality all matter."
             },
             1: {
                 period: "Reporting and oversight",
@@ -96,10 +93,10 @@ module.exports = {
                 copy: "The reporting line includes communication with key management personnel and audit partners, together with review of junior work to improve completeness, clarity, and traceability."
             },
             2: {
-                period: "Systems awareness",
-                role: "Workflow and software fluency",
-                title: "Software exposure supports cleaner audit execution and reporting discipline",
-                copy: "Practical use of banking systems, local accounting tools, and structured workflows strengthens how I organize evidence, follow process, and keep outputs usable for review."
+                period: "Accounting judgment",
+                role: "Sector-linked technical awareness",
+                title: "Revenue recognition, ECL, and provisions are handled with sector context in mind",
+                copy: "Exposure across banking, manufacturing, listed, private, and service-led environments has strengthened judgment on how recognition, measurement, support, and disclosure issues should be assessed rather than approached through a generic checklist alone."
             }
         },
         toolkit: {
@@ -171,10 +168,10 @@ module.exports = {
         skills: {
             heading: "Execution strengths",
             items: [
-                { label: "Audit tasks", value: "Planning support, testing, evidence review, ledger analysis, and reconciliations" },
-                { label: "Financial work", value: "Financial review and support work performed within standards-based reporting environments" },
-                { label: "Consulting work", value: "Structured analysis and follow-through in advisory-oriented assignments" },
-                { label: "Issue documentation", value: "Clear support files prepared for review, discussion, and resolution" }
+                { label: "Financial statement review", value: "Financial statement review and analysis performed within standards-based reporting environments" },
+                { label: "Ledger analysis", value: "Ledger review, reconciliations, evidence evaluation, and issue tracing across varied assignments" },
+                { label: "Audit support", value: "Planning support, testing, documentation handling, and partner reporting support across sector contexts" },
+                { label: "Issue documentation", value: "Clear support files prepared for review, discussion, follow-up, and resolution" }
             ]
         },
         sectors: {
@@ -189,6 +186,18 @@ module.exports = {
                 { title: "Accounting and local workflow tools", copy: "Used local tools such as Tally and Rigo to support accounting review, reporting workflows, ledger handling, and structured follow-through in audit and finance contexts." },
                 { title: "Documentation and review workflow", copy: "Software exposure has been used to keep audit files, supporting schedules, reconciliations, and reporting materials organized for management and partner oversight." }
             ]
+        },
+        technicalAreas: {
+            heading: "Key technical areas",
+            copy: "Cross-sector assignments have strengthened practical awareness of accounting and audit matters that require stronger judgment, clearer support, and closer review.",
+            items: [
+                { title: "Revenue recognition", copy: "Recognition issues were approached with attention to sector-specific operating models, support quality, and the link between underlying transactions and reported outcomes." },
+                { title: "Expected Credit Loss (ECL)", copy: "Banking-related exposure strengthened awareness of ECL-sensitive processes, control environments, and the need for disciplined support around assumptions and review." },
+                { title: "Provisions", copy: "Provision-related matters required clearer documentation of assumptions, review of supporting evidence, and communication suitable for management and partner discussion." }
+            ]
+        },
+        examples: {
+            heading: "Sector-specific examples"
         },
         cta: {
             title: "Built on evidence, clarity, and follow-through.",
@@ -278,7 +287,17 @@ module.exports = {
             copy: "Professional experience has been built through audit, financial, and consulting assignments performed within NFRS and IFRS reporting contexts. Strengths include complete audit file preparation, evidence organization, software fluency across banking and accounting systems, and reporting support for key management personnel and audit partners.",
             primary: "Download PDF",
             secondary: "Contact Me",
-            note: "Press Ctrl+P or use the button above to export a clean PDF version."
+            note: "Use the PDF button for the direct file or Ctrl+P for a print-friendly version."
+        },
+        coreCompetencies: {
+            kicker: "Core Competencies",
+            items: [
+                "Financial statement review",
+                "Ledger analysis and reconciliations",
+                "Audit support and file preparation",
+                "NFRS / IFRS reporting exposure",
+                "Management and partner reporting"
+            ]
         },
         snapshot: {
             metricLabel: "Years since January 2024",
@@ -387,6 +406,10 @@ module.exports = {
         footer: {
             links: ["Home", "About", "Achievements", "CV", "Contact"],
             meta: "Recruiter-ready CV with direct LinkedIn and GitHub access."
-        }
+        },
+        lastUpdatedLabel: "Last updated"
+    },
+    metadata: {
+        faviconAlt: "Suphal Bhattarai site icon"
     }
 };

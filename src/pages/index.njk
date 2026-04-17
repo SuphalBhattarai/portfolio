@@ -20,8 +20,7 @@ activePage: home
                     <p class="hero-subtitle">{{ pageData.hero.subtitle }}</p>
                     <p class="hero-copy">{{ pageData.hero.copy }}</p>
                     <div class="hero-actions">
-                        <a class="button-primary" href="{{ profile.links.achievements }}">{{ pageData.hero.primaryCta }}</a>
-                        <a class="button-secondary" href="{{ profile.links.cv }}">{{ pageData.hero.secondaryCta }}</a>
+                        <a class="button-primary" href="{{ profile.links.cv }}">{{ pageData.hero.primaryCta }}</a>
                     </div>
                 </div>
 
@@ -32,6 +31,7 @@ activePage: home
                     <aside aria-label="Academic focus" class="focus-card reveal">
                         <p class="focus-label">{{ pageData.focus.label }}</p>
                         <p class="focus-title">{{ pageData.focus.title }}</p>
+                        <p class="panel-copy focus-summary-copy">{{ profile.recruiter.summary }}</p>
                         <div class="focus-metrics">
                             <div>
                                 <span class="focus-value" data-experience-metric>0.0</span>
@@ -45,6 +45,39 @@ activePage: home
                     </aside>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section aria-label="Recruiter proof strip" class="proof-strip reveal">
+        <div class="container">
+            <div class="proof-strip-grid">
+                {% for item in profile.recruiter.proofStrip %}
+                <article class="proof-pill">
+                    <span class="proof-pill-index">0{{ loop.index }}</span>
+                    <span class="proof-pill-text">{{ item }}</span>
+                </article>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section class="page-main">
+        <div class="container">
+            <section class="detail-grid grid-three-equal reveal">
+                <div class="section-head section-head-compact section-head-full">
+                    <div>
+                        <h2 class="section-title section-title-dark">{{ pageData.whyHire.heading }}</h2>
+                        <p class="section-copy section-copy-dark">{{ profile.recruiter.summary }}</p>
+                    </div>
+                    <div class="section-index section-index-dark">{{ pageData.whyHire.index }}</div>
+                </div>
+                {% for item in profile.recruiter.whyHire %}
+                <article class="card surface-low panel-padding-lg">
+                    <h3 class="panel-title">{{ item.title }}</h3>
+                    <p class="panel-copy">{{ item.copy }}</p>
+                </article>
+                {% endfor %}
+            </section>
         </div>
     </section>
 
@@ -65,16 +98,6 @@ activePage: home
                     <h3 class="expertise-title">{{ card.title }}</h3>
                     <p class="expertise-copy">{{ card.copy }}</p>
                 </article>
-                {% endfor %}
-            </div>
-        </div>
-    </section>
-
-    <section aria-label="Editorial statements" class="ticker reveal">
-        <div class="container">
-            <div class="ticker-track">
-                {% for item in pageData.ticker %}
-                <span class="ticker-item{% if loop.index is even %} ticker-item-accent{% endif %}">{{ item }}</span>
                 {% endfor %}
             </div>
         </div>
