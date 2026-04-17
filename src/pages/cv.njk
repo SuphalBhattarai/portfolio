@@ -1,0 +1,174 @@
+---
+layout: layouts/base.njk
+permalink: cv.html
+activePage: cv
+---
+{% set pageData = pages.cv %}
+<main class="page-main">
+    <div class="container cv-document">
+        <div class="cv-paper">
+            <header class="cv-topbar reveal">
+                <div>
+                    <p class="section-label">{{ pageData.header.kicker }}</p>
+                    <h1 class="cv-name">{{ pageData.header.name }}</h1>
+                    <p class="cv-roleline">{{ pageData.header.role }}</p>
+                </div>
+                <div class="cv-contact-list">
+                    <div class="cv-contact-item">
+                        <strong>{{ pageData.header.contact[0].label }}</strong>
+                        <a href="{{ profile.links.emailHref }}">{{ profile.contact.email }}</a>
+                    </div>
+                    <div class="cv-contact-item">
+                        <strong>{{ pageData.header.contact[1].label }}</strong>
+                        <a href="{{ profile.links.phoneHref }}">{{ profile.contact.phone }}</a>
+                    </div>
+                    <div class="cv-contact-item">
+                        <strong>{{ pageData.header.contact[2].label }}</strong>
+                        <span>{{ profile.contact.address }}</span>
+                    </div>
+                    <div class="cv-contact-item">
+                        <strong>{{ profile.social.linkedin.label }}</strong>
+                        <a aria-label="{{ profile.social.linkedin.ariaLabel }}" href="{{ profile.social.linkedin.href }}" rel="noreferrer" target="_blank">{{ profile.social.linkedin.href }}</a>
+                    </div>
+                    <div class="cv-contact-item">
+                        <strong>{{ profile.social.github.label }}</strong>
+                        <a aria-label="{{ profile.social.github.ariaLabel }}" href="{{ profile.social.github.href }}" rel="noreferrer" target="_blank">{{ profile.social.github.href }}</a>
+                    </div>
+                </div>
+            </header>
+
+            <section class="cv-header-grid reveal reveal-delay-1">
+                <article class="cv-summary-panel">
+                    <div class="cv-section-head">
+                        <div>
+                            <p class="cv-section-kicker">{{ pageData.summary.kicker }}</p>
+                            <h2 class="cv-section-title">{{ pageData.summary.title }}</h2>
+                        </div>
+                        <span class="cv-section-index">{{ pageData.summary.index }}</span>
+                    </div>
+                    <p class="page-copy">{{ pageData.summary.copy }}</p>
+                    <div class="cv-print-actions">
+                        <button class="button-primary" id="print-cv" type="button">{{ pageData.summary.primary }}</button>
+                        <a class="button-secondary" href="{{ profile.links.contact }}">{{ pageData.summary.secondary }}</a>
+                    </div>
+                    <p class="cv-inline-note">{{ pageData.summary.note }}</p>
+                </article>
+
+                <aside class="cv-summary-metrics">
+                    <article class="cv-metric-panel reveal reveal-delay-2">
+                        <span class="cv-metric-value" data-experience-metric>0.0</span>
+                        <span class="cv-metric-label">{{ pageData.snapshot.metricLabel }}</span>
+                    </article>
+                    <article class="cv-metric-panel reveal reveal-delay-2b">
+                        <span class="cv-metric-value">{{ profile.proof.sectorsCount }}</span>
+                        <span class="cv-metric-label">{{ pageData.snapshot.metricLabelAlt }}</span>
+                    </article>
+                    {% for note in pageData.snapshot.notes %}
+                    <article class="cv-side-panel reveal {% if loop.index == 1 %}reveal-delay-2c{% else %}reveal-delay-2d{% endif %}">
+                        <p class="cv-mini-title">{{ note.title }}</p>
+                        <p class="panel-copy">{{ note.copy }}</p>
+                    </article>
+                    {% endfor %}
+                </aside>
+            </section>
+
+            <section class="cv-section cv-section-spacious cv-page-break-before reveal reveal-delay-3b">
+                <div class="cv-section-head">
+                    <div>
+                        <p class="cv-section-kicker">{{ pageData.experience.kicker }}</p>
+                        <h2 class="cv-section-title">{{ pageData.experience.heading }}</h2>
+                    </div>
+                    <span class="cv-section-index">{{ pageData.experience.index }}</span>
+                </div>
+                <div class="cv-role-stack">
+                    {% for role in pageData.experience.roles %}
+                    <article class="cv-role-panel">
+                        <div class="cv-role-header">
+                            <div>
+                                <h3 class="cv-role-title">{{ role.title }}</h3>
+                                <p class="cv-role-subtitle">{{ role.subtitle }}</p>
+                            </div>
+                            <span class="cv-role-meta">{{ role.meta }}</span>
+                        </div>
+                        <p class="panel-copy">{{ role.copy }}</p>
+                        <ul class="cv-list">
+                            {% for point in role.points %}
+                            <li>{{ point }}</li>
+                            {% endfor %}
+                        </ul>
+                    </article>
+                    {% endfor %}
+                </div>
+            </section>
+
+            <section class="cv-two-column cv-section-spacious reveal reveal-delay-4">
+                <article class="cv-section-panel cv-section">
+                    <div class="cv-section-head">
+                        <div>
+                            <p class="cv-section-kicker">{{ pageData.education.kicker }}</p>
+                            <h2 class="cv-section-title">{{ pageData.education.heading }}</h2>
+                        </div>
+                        <span class="cv-section-index">{{ pageData.education.index }}</span>
+                    </div>
+                    <div class="cv-education-grid">
+                        {% for block in pageData.education.blocks %}
+                        <article class="cv-tag-panel">
+                            <p class="cv-mini-title">{{ block.title }}</p>
+                            <ul class="cv-list">
+                                {% for item in block.items %}
+                                <li>{{ item }}</li>
+                                {% endfor %}
+                            </ul>
+                        </article>
+                        {% endfor %}
+                    </div>
+                </article>
+
+                <article class="cv-section-panel cv-section">
+                    <div class="cv-section-head">
+                        <div>
+                            <p class="cv-section-kicker">{{ pageData.sectors.kicker }}</p>
+                            <h2 class="cv-section-title">{{ pageData.sectors.heading }}</h2>
+                        </div>
+                        <span class="cv-section-index">{{ pageData.sectors.index }}</span>
+                    </div>
+                    <p class="panel-copy">{{ pageData.sectors.copy }}</p>
+                    <div class="cv-tag-grid">
+                        {% for group in pageData.sectors.groups %}
+                        <article class="cv-tag-panel">
+                            <p class="cv-mini-title">{{ group.title }}</p>
+                            <ul class="cv-list">
+                                {% for item in group.items %}
+                                <li>{{ item }}</li>
+                                {% endfor %}
+                            </ul>
+                        </article>
+                        {% endfor %}
+                    </div>
+                </article>
+            </section>
+
+            <section class="cv-section cv-section-spacious cv-page-break-before reveal reveal-delay-6">
+                <div class="cv-section-head">
+                    <div>
+                        <p class="cv-section-kicker">{{ pageData.competencies.kicker }}</p>
+                        <h2 class="cv-section-title">{{ pageData.competencies.heading }}</h2>
+                    </div>
+                    <span class="cv-section-index">{{ pageData.competencies.index }}</span>
+                </div>
+                <div class="cv-competency-grid">
+                    {% for item in pageData.competencies.items %}
+                    <article class="cv-competency-panel">
+                        <p class="cv-mini-title">{{ item.title }}</p>
+                        <ul class="cv-list">
+                            {% for point in item.points %}
+                            <li>{{ point }}</li>
+                            {% endfor %}
+                        </ul>
+                    </article>
+                    {% endfor %}
+                </div>
+            </section>
+        </div>
+    </div>
+</main>

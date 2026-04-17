@@ -1,11 +1,120 @@
+{% set pageData = pages[activePage] %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>{{ title or site.name }}</title>
+    <title>{{ pageData.title or site.name }}</title>
+    <meta content="{{ pageData.description or site.description }}" name="description">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..800;1,6..72,400..800&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400" rel="stylesheet">
+    <link href="css/editorial-pages.css" rel="stylesheet">
 </head>
 <body>
-    {{ content | safe }}
+    <div class="page-shell">
+        <header class="site-header">
+            <div class="container">
+                <nav aria-label="Primary" class="site-nav">
+                    <a class="brand" href="{{ profile.links.home }}">{{ profile.nav.brand }}</a>
+                    <div class="nav-links">
+                        <a class="nav-link{% if activePage == 'home' %} nav-link-active{% endif %}" href="{{ profile.links.home }}">{{ profile.nav.home }}</a>
+                        <a class="nav-link{% if activePage == 'about' %} nav-link-active{% endif %}" href="{{ profile.links.about }}">{{ profile.nav.about }}</a>
+                        <a class="nav-link{% if activePage == 'achievements' %} nav-link-active{% endif %}" href="{{ profile.links.achievements }}">{{ profile.nav.achievements }}</a>
+                        <a class="nav-link{% if activePage == 'cv' %} nav-link-active{% endif %}" href="{{ profile.links.cv }}">{{ profile.nav.cv }}</a>
+                        <a class="nav-link{% if activePage == 'contact' %} nav-link-active{% endif %}" href="{{ profile.links.contact }}">{{ profile.nav.contact }}</a>
+                    </div>
+                    <div class="nav-meta">
+                        <div aria-label="Public profiles" class="nav-socials">
+                            <a aria-label="{{ profile.social.linkedin.ariaLabel }}" class="social-link" href="{{ profile.social.linkedin.href }}" rel="noreferrer" target="_blank">{{ profile.social.linkedin.label }}</a>
+                            <a aria-label="{{ profile.social.github.ariaLabel }}" class="social-link" href="{{ profile.social.github.href }}" rel="noreferrer" target="_blank">{{ profile.social.github.label }}</a>
+                        </div>
+                        <a class="nav-button" href="{{ profile.links.contact }}">{{ profile.nav.cta }}</a>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        {{ content | safe }}
+
+        <footer class="site-footer{% if activePage == 'home' %} reveal{% endif %}">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">{{ profile.footer.brand }}</div>
+                    <div class="footer-links">
+                        <a class="footer-link" href="{{ profile.links.home }}">{{ profile.nav.home }}</a>
+                        <a class="footer-link" href="{{ profile.links.about }}">{{ profile.nav.about }}</a>
+                        <a class="footer-link" href="{{ profile.links.achievements }}">{{ profile.nav.achievements }}</a>
+                        <a class="footer-link" href="{{ profile.links.cv }}">{{ profile.nav.cv }}</a>
+                        <a class="footer-link" href="{{ profile.links.contact }}">{{ profile.nav.contact }}</a>
+                    </div>
+                    <div class="footer-meta-block">
+                        <div class="footer-meta">{{ pageData.footer.meta }}</div>
+                        <div aria-label="Public profiles" class="footer-socials">
+                            <a aria-label="{{ profile.social.linkedin.ariaLabel }}" class="social-link" href="{{ profile.social.linkedin.href }}" rel="noreferrer" target="_blank">{{ profile.social.linkedin.label }}</a>
+                            <a aria-label="{{ profile.social.github.ariaLabel }}" class="social-link" href="{{ profile.social.github.href }}" rel="noreferrer" target="_blank">{{ profile.social.github.label }}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        (function () {
+            var start = new Date(
+                {{ profile.proof.experienceStart.year }},
+                {{ profile.proof.experienceStart.monthIndex }},
+                {{ profile.proof.experienceStart.day }}
+            );
+            var today = new Date();
+            var elapsedMilliseconds = Math.max(today.getTime() - start.getTime(), 0);
+            var elapsedYears = (elapsedMilliseconds / (365.25 * 24 * 60 * 60 * 1000)).toFixed(1);
+
+            document.documentElement.classList.add("js");
+
+            document.querySelectorAll("[data-experience-metric]").forEach(function (node) {
+                node.textContent = elapsedYears;
+            });
+
+            if ("IntersectionObserver" in window) {
+                var observer = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (!entry.isIntersecting) {
+                            return;
+                        }
+
+                        entry.target.classList.add("reveal-visible");
+                        observer.unobserve(entry.target);
+                    });
+                }, {
+                    rootMargin: "0px 0px -12% 0px",
+                    threshold: 0.15
+                });
+
+                document.querySelectorAll(".reveal").forEach(function (node) {
+                    observer.observe(node);
+                });
+            } else {
+                document.querySelectorAll(".reveal").forEach(function (node) {
+                    node.classList.add("reveal-visible");
+                });
+            }
+
+            if (document.body && "{{ activePage }}" === "home") {
+                window.requestAnimationFrame(function () {
+                    document.body.classList.add("page-ready");
+                });
+            }
+
+            var printButton = document.getElementById("print-cv");
+            if (printButton) {
+                printButton.addEventListener("click", function () {
+                    window.print();
+                });
+            }
+        }());
+    </script>
 </body>
 </html>

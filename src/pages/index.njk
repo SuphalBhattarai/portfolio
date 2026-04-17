@@ -1,8 +1,82 @@
 ---
 layout: layouts/base.njk
-title: Home | Suphal Bhattarai
+permalink: index.html
+activePage: home
 ---
+{% set pageData = pages.home %}
 <main>
-    <h1>Portfolio source scaffold</h1>
-    <p>The full page migration into Eleventy templates happens in the next steps.</p>
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-grid">
+                <div>
+                    <div class="status-pill reveal">
+                        <span class="status-pill-dot"></span>
+                        <span>{{ pageData.hero.status }}</span>
+                    </div>
+                    <h1 class="hero-title">
+                        <span>{{ pageData.hero.titleLineOne }}</span>
+                        <span class="hero-title-accent">{{ pageData.hero.titleLineTwo }}</span>
+                    </h1>
+                    <p class="hero-subtitle">{{ pageData.hero.subtitle }}</p>
+                    <p class="hero-copy">{{ pageData.hero.copy }}</p>
+                    <div class="hero-actions">
+                        <a class="button-primary" href="{{ profile.links.achievements }}">{{ pageData.hero.primaryCta }}</a>
+                        <a class="button-secondary" href="{{ profile.links.cv }}">{{ pageData.hero.secondaryCta }}</a>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="hero-image-frame">
+                        <img alt="{{ profile.site.portrait.alt }}" class="hero-image" src="{{ profile.site.portrait.src }}">
+                    </div>
+                    <aside aria-label="Academic focus" class="focus-card reveal">
+                        <p class="focus-label">{{ pageData.focus.label }}</p>
+                        <p class="focus-title">{{ pageData.focus.title }}</p>
+                        <div class="focus-metrics">
+                            <div>
+                                <span class="focus-value" data-experience-metric>0.0</span>
+                                <span>{{ pageData.focus.metricLabel }}</span>
+                            </div>
+                            <div>
+                                <span class="focus-value">{{ profile.proof.sectorsCount }}</span>
+                                <span>{{ pageData.focus.metricLabelAlt }}</span>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-dark reveal" id="expertise">
+        <div class="container">
+            <div class="section-head">
+                <div>
+                    <h2 class="section-title">{{ pageData.expertise.heading }}</h2>
+                    <p class="section-copy">{{ pageData.expertise.copy }}</p>
+                </div>
+                <div class="section-index">{{ pageData.expertise.index }}</div>
+            </div>
+
+            <div class="expertise-grid">
+                {% for card in pageData.cards %}
+                <article class="expertise-card">
+                    <span aria-hidden="true" class="material-symbols-outlined">{% if loop.index == 1 %}payments{% elseif loop.index == 2 %}fact_check{% elseif loop.index == 3 %}account_balance{% else %}terminal{% endif %}</span>
+                    <h3 class="expertise-title">{{ card.title }}</h3>
+                    <p class="expertise-copy">{{ card.copy }}</p>
+                </article>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section aria-label="Editorial statements" class="ticker reveal">
+        <div class="container">
+            <div class="ticker-track">
+                {% for item in pageData.ticker %}
+                <span class="ticker-item{% if loop.index is even %} ticker-item-accent{% endif %}">{{ item }}</span>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
 </main>
