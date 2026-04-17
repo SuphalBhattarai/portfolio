@@ -4,6 +4,8 @@
   "description": "Recruiter-focused audit associate portfolio site",
   "main": "index.js",
   "scripts": {
+    "build": "eleventy",
+    "dev": "eleventy --serve",
     "deploy": "gh-pages -d dist"
   },
   "repository": {
