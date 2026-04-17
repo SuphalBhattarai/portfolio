@@ -1021,7 +1021,7 @@ button:focus-visible,
 }
 
 .cv-roleline {
-    margin: 1rem 0 0;
+    margin: 1rem 0 0.45rem;
     color: var(--color-primary);
     font-size: 0.86rem;
     font-weight: 700;
@@ -1139,7 +1139,7 @@ button:focus-visible,
 }
 
 .cv-section-kicker {
-    margin: 0;
+    margin: 0 0 0.6rem;
     color: var(--color-primary);
     font-size: 0.76rem;
     font-weight: 700;
@@ -1189,7 +1189,7 @@ button:focus-visible,
 }
 
 .cv-role-subtitle {
-    margin: 0.35rem 0 0;
+    margin: 0.45rem 0 0.1rem;
     color: var(--color-primary);
     font-size: 0.76rem;
     font-weight: 700;
@@ -1241,7 +1241,7 @@ button:focus-visible,
 }
 
 .cv-mini-title {
-    margin: 0 0 0.65rem;
+    margin: 0 0 0.8rem;
     font-size: 0.78rem;
     font-weight: 700;
     letter-spacing: 0.22em;
