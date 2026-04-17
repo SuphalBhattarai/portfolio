@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Contact | Suphal Bhattarai</title>
-    <meta content="Contact page for audit, consulting, and portfolio discussions with Suphal Bhattarai." name="description">
+    <meta content="Contact Suphal Bhattarai for audit, banking, finance, and IT opportunities, with direct LinkedIn and GitHub links." name="description">
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..800;1,6..72,400..800&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
@@ -16,15 +16,21 @@
         <header class="site-header">
             <div class="container">
                 <nav class="site-nav" aria-label="Primary">
-                    <a class="brand" data-content="nav.brand" href="index.html">Suphal Bhattarai</a>
+                    <a class="brand" data-content="nav.brand" data-attr-href="links.home" href="index.html">Suphal Bhattarai</a>
                     <div class="nav-links">
-                        <a class="nav-link" data-content="nav.home" href="index.html">Home</a>
-                        <a class="nav-link" data-content="nav.about" href="about.html">About</a>
-                        <a class="nav-link" data-content="nav.achievements" href="achievements.html">Achievements</a>
-                        <a class="nav-link" data-content="nav.cv" href="cv.html">CV</a>
-                        <a class="nav-link nav-link-active" data-content="nav.contact" href="contact.html">Contact</a>
+                        <a class="nav-link" data-content="nav.home" data-attr-href="links.home" href="index.html">Home</a>
+                        <a class="nav-link" data-content="nav.about" data-attr-href="links.about" href="about.html">About</a>
+                        <a class="nav-link" data-content="nav.achievements" data-attr-href="links.achievements" href="achievements.html">Achievements</a>
+                        <a class="nav-link" data-content="nav.cv" data-attr-href="links.cv" href="cv.html">CV</a>
+                        <a class="nav-link nav-link-active" data-content="nav.contact" data-attr-href="links.contact" href="contact.html">Contact</a>
                     </div>
-                    <a class="nav-button" data-content="nav.cta" href="contact.html">Hire Me</a>
+                    <div class="nav-meta">
+                        <div class="nav-socials" aria-label="Public profiles">
+                            <a class="social-link" data-content="social.linkedin.label" data-attr-href="social.linkedin.href" data-attr-aria-label="social.linkedin.ariaLabel" href="https://www.linkedin.com" rel="noreferrer" target="_blank">LinkedIn</a>
+                            <a class="social-link" data-content="social.github.label" data-attr-href="social.github.href" data-attr-aria-label="social.github.ariaLabel" href="https://github.com" rel="noreferrer" target="_blank">GitHub</a>
+                        </div>
+                        <a class="nav-button" data-content="nav.cta" data-attr-href="links.contact" href="contact.html">Contact</a>
+                    </div>
                 </nav>
             </div>
         </header>
@@ -62,8 +68,8 @@
                             </div>
                         </div>
                         <div class="link-row" style="margin-top: 2rem;">
-                            <a class="button-primary" data-content="form.primary" href="mailto:suphalbhattarai4@gmail.com">Email directly</a>
-                            <a class="button-secondary" data-content="form.secondary" href="tel:+9779862251305">Call directly</a>
+                            <a class="button-primary" data-content="form.primary" data-attr-href="links.emailHref" href="mailto:suphalbhattarai4@gmail.com">Email directly</a>
+                            <a class="button-secondary" data-content="form.secondary" data-attr-href="links.phoneHref" href="tel:+9779862251305">Call directly</a>
                         </div>
                     </article>
 
@@ -74,14 +80,28 @@
                                 <div class="contact-icon"><span class="material-symbols-outlined">mail</span></div>
                                 <div>
                                     <div class="contact-title" data-content="direct.email.label">Email</div>
-                                    <a class="panel-copy" data-content="direct.email.value" href="mailto:suphalbhattarai4@gmail.com">suphalbhattarai4@gmail.com</a>
+                                    <a class="panel-copy" data-content="contact.email" data-attr-href="links.emailHref" href="mailto:suphalbhattarai4@gmail.com">suphalbhattarai4@gmail.com</a>
                                 </div>
                             </div>
                             <div class="contact-link-card">
                                 <div class="contact-icon"><span class="material-symbols-outlined">call</span></div>
                                 <div>
                                     <div class="contact-title" data-content="direct.phone.label">Phone</div>
-                                    <a class="panel-copy" data-content="direct.phone.value" href="tel:+9779862251305">+977-9862251305</a>
+                                    <a class="panel-copy" data-content="contact.phone" data-attr-href="links.phoneHref" href="tel:+9779862251305">+977-9862251305</a>
+                                </div>
+                            </div>
+                            <div class="contact-link-card">
+                                <div class="contact-icon"><span class="material-symbols-outlined">public</span></div>
+                                <div>
+                                    <div class="contact-title" data-content="social.linkedin.label">LinkedIn</div>
+                                    <a class="panel-copy" data-content="social.linkedin.href" data-attr-href="social.linkedin.href" data-attr-aria-label="social.linkedin.ariaLabel" href="https://www.linkedin.com" rel="noreferrer" target="_blank">https://www.linkedin.com/in/suphal-bhattarai-078415184</a>
+                                </div>
+                            </div>
+                            <div class="contact-link-card">
+                                <div class="contact-icon"><span class="material-symbols-outlined">code</span></div>
+                                <div>
+                                    <div class="contact-title" data-content="social.github.label">GitHub</div>
+                                    <a class="panel-copy" data-content="social.github.href" data-attr-href="social.github.href" data-attr-aria-label="social.github.ariaLabel" href="https://github.com" rel="noreferrer" target="_blank">https://github.com/SuphalBhattarai</a>
                                 </div>
                             </div>
                         </section>
@@ -89,11 +109,11 @@
                         <section class="card surface-low panel-padding-lg reveal" style="--reveal-delay: 0.15s;">
                             <h2 class="panel-title" data-content="services.heading">Discussion areas</h2>
                             <div class="tag-row">
-                                <span class="tag" data-content="services.items.0">Audit assignments</span>
-                                <span class="tag" data-content="services.items.1">Sector consultation</span>
-                                <span class="tag" data-content="services.items.2">Reporting structure</span>
-                                <span class="tag" data-content="services.items.3">Portfolio review</span>
-                                <span class="tag" data-content="services.items.4">GitHub projects</span>
+                                <span class="tag" data-content="services.items.0">Audit roles</span>
+                                <span class="tag" data-content="services.items.1">Banking opportunities</span>
+                                <span class="tag" data-content="services.items.2">Finance opportunities</span>
+                                <span class="tag" data-content="services.items.3">IT opportunities</span>
+                                <span class="tag" data-content="services.items.4">Reporting and documentation support</span>
                             </div>
                         </section>
 
@@ -111,56 +131,54 @@
                 <div class="footer-grid">
                     <div class="footer-brand" data-content="footer.brand">Suphal Bhattarai</div>
                     <div class="footer-links">
-                        <a class="footer-link" data-content="footer.links.0" href="index.html">Home</a>
-                        <a class="footer-link" data-content="footer.links.1" href="about.html">About</a>
-                        <a class="footer-link" data-content="footer.links.2" href="achievements.html">Achievements</a>
-                        <a class="footer-link" data-content="footer.links.3" href="cv.html">CV</a>
-                        <a class="footer-link" data-content="footer.links.4" href="contact.html">Contact</a>
+                        <a class="footer-link" data-content="footer.links.0" data-attr-href="links.home" href="index.html">Home</a>
+                        <a class="footer-link" data-content="footer.links.1" data-attr-href="links.about" href="about.html">About</a>
+                        <a class="footer-link" data-content="footer.links.2" data-attr-href="links.achievements" href="achievements.html">Achievements</a>
+                        <a class="footer-link" data-content="footer.links.3" data-attr-href="links.cv" href="cv.html">CV</a>
+                        <a class="footer-link" data-content="footer.links.4" data-attr-href="links.contact" href="contact.html">Contact</a>
                     </div>
-                    <div class="footer-meta" data-content="footer.meta">Available for formal and well-scoped professional discussions.</div>
+                    <div class="footer-meta-block">
+                        <div class="footer-meta" data-content="footer.meta">Available for banking, finance, and IT opportunities with direct LinkedIn and GitHub access.</div>
+                        <div class="footer-socials" aria-label="Public profiles">
+                            <a class="social-link" data-content="social.linkedin.label" data-attr-href="social.linkedin.href" data-attr-aria-label="social.linkedin.ariaLabel" href="https://www.linkedin.com" rel="noreferrer" target="_blank">LinkedIn</a>
+                            <a class="social-link" data-content="social.github.label" data-attr-href="social.github.href" data-attr-aria-label="social.github.ariaLabel" href="https://github.com" rel="noreferrer" target="_blank">GitHub</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </footer>
     </div>
 
+    <script src="js/profile-data.js"></script>
     <script src="js/content-binding.js"></script>
     <script>
         /*
          * Contact-page copy is centralized so direct-contact details and inquiry labels remain easy to maintain.
          * This follows the same editable-content pattern used on the other pages.
          */
-        const pageContent = {
-            nav: {
-                brand: "Suphal Bhattarai",
-                home: "Home",
-                about: "About",
-                achievements: "Achievements",
-                cv: "CV",
-                contact: "Contact",
-                cta: "Hire Me"
-            },
+        const pageContent = window.portfolioData.composePageContent({
             hero: {
                 kicker: "Professional Contact",
-                title: "Open for audit, consulting, and structured project discussions.",
-                copy: "If the work requires disciplined documentation, a professional audit perspective, or a cleaner portfolio presentation, you can reach me directly through the channels below. I review inquiries with the same structure I bring to assignments and project work.",
+                title: "Open for banking, finance, and IT opportunities with clear audit accountability.",
+                copy: "Reach out for roles or conversations where sector breadth, documentation discipline, and standards-aware audit work matter. Direct email, phone, LinkedIn, and GitHub links are included below for faster follow-up.",
                 index: "04 // Direct Contact"
             },
             form: {
                 kicker: "Professional Introduction",
                 heading: "Start the conversation through direct contact.",
-                copy: "This website is a static portfolio, so messages are handled directly through email or phone. Reach out with the sector context, objective, and timeline, and I will respond with the appropriate next step.",
+                copy: "This site is a static portfolio, so the best approach is a direct message with the role, sector context, and expected scope. Responses are handled with the same structure used in reporting and audit follow-through.",
                 points: [
                     {
                         label: "Best for",
-                        value: "Audit roles, consulting discussions, documentation support, and structured technical collaboration."
+                        value: "Audit roles and banking, finance, or IT opportunities that value documentation quality and cross-sector exposure."
                     },
                     {
                         label: "Helpful context",
-                        value: "Include your organization, sector, expected timeline, and the kind of support you are looking for."
+                        value: "Include your organization, sector, expected timeline, and whether the role focuses on audit, finance, systems, or reporting support."
                     },
                     {
                         label: "Preferred channel",
-                        value: "Email is best for structured summaries, while phone works well for direct discussion and quick clarification."
+                        value: "Email is best for structured summaries, while phone and LinkedIn work well for direct discussion and quick clarification."
                     }
                 ],
                 primary: "Email directly",
@@ -173,18 +191,17 @@
             },
             services: {
                 heading: "Discussion areas",
-                items: ["Audit assignments", "Sector consultation", "Reporting structure", "Portfolio review", "GitHub projects"]
+                items: ["Audit roles", "Banking opportunities", "Finance opportunities", "IT opportunities", "Reporting and documentation support"]
             },
             note: {
                 heading: "Response note",
-                copy: "Clear, well-scoped inquiries receive the fastest response. Include the sector context, objective, and expected support so the reply can be equally structured."
+                copy: "Clear, well-scoped inquiries receive the fastest response. Include the role, sector context, and expected support so the reply can be equally structured."
             },
             footer: {
-                brand: "Suphal Bhattarai",
                 links: ["Home", "About", "Achievements", "CV", "Contact"],
-                meta: "Available for formal and well-scoped professional discussions."
+                meta: "Available for banking, finance, and IT opportunities with direct LinkedIn and GitHub access."
             }
-        };
+        });
 
         window.editorialContent.bindPageContent(pageContent);
         window.editorialContent.initializePageMotion();
