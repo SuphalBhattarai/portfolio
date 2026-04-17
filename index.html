@@ -1,60 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/main.min.css">
-    <title>Portfolio</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Suphal Bhattarai | The Editorial Ledger</title>
+    <meta content="Academic-authority noir landing page for Suphal Bhattarai." name="description">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..800;1,6..72,400..800&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400" rel="stylesheet">
+    <link href="css/editorial-pages.css" rel="stylesheet">
 </head>
-
 <body>
-    <nav>
-     <h1>Suphal</h1>
-        <ul>
-            <li ><a href="#">Home</li></a>
-            <li ><a href="#">About</li></a>
-            <li ><a href="#">Services</li></a>
-            <li ><a href="#">Designs</li></a>
-        </ul>
-        <!--<div class="hire"><a href="#"> Hire Me</a></div>-->
-    </nav>
-
-    <div class="showcase">
-
-    <div class="showcase-image">
-<div class="parallelogram"></div>
-<div class="parallelogram-alt"></div>
-        <img src="images/profile.jpeg" alt="profile.jpeg">
-    </div>
-    <div class="showcase-text">
-        Portfolio
-        <h1>Suphal <br> Bhattarai</h1>
-        <p> I am a student. Hope you like some of my websites. More landing pages and full websites coming soon</p>
-    </div>
-</div>
-<!-- <button>View Projects</button> -->
-    <footer>
-        <div class="content">
-           <img src="images/design.jpeg" alt="design.jpeg">
-            <h2>Design</h2>
-            Figma is the design software of my choice. Any website, product or pages can be designed using this tool both independently or via group colaboration.
-        </div>
-        <div class="content">
-           <img src="images/build.jpeg" alt="build.jpeg">
-            <h2>Build</h2>
-            Vscode is my choice for building web projects but prefer emacs or vim for any other projects. Git is the version control tool that I use.
+    <div class="page-shell">
+        <header class="site-header">
+            <div class="container">
+                <nav class="site-nav" aria-label="Primary">
+                    <a class="brand" data-content="nav.brand" href="#home">Suphal Bhattarai</a>
+                    <div class="nav-links">
+                        <a class="nav-link nav-link-active" data-content="nav.home" href="#home">Home</a>
+                        <a class="nav-link" data-content="nav.about" href="about.html">About</a>
+                        <a class="nav-link" data-content="nav.achievements" href="achievements.html">Achievements</a>
+                        <a class="nav-link" data-content="nav.cv" href="cv.html">CV</a>
+                        <a class="nav-link" data-content="nav.contact" href="contact.html">Contact</a>
+                    </div>
+                    <a class="nav-button" data-content="nav.cta" href="contact.html">Hire Me</a>
+                </nav>
             </div>
-            <dev class="content">
-           <img src="images/deploy.jpeg" alt="deploy.jpeg">
-            <h2>Deploy</h2>
-            Both amazon web services or other lesser known netlify like tools can be usedfor deploying websites using your own custom domain.
-</dev>
-        </div>
-    </footer>
-</body>
+        </header>
 
+        <main>
+            <section class="hero" id="home">
+                <div class="container">
+                    <div class="hero-grid">
+                        <div>
+                            <div class="status-pill reveal">
+                                <span class="status-pill-dot"></span>
+                                <span data-content="hero.status">Available for Job</span>
+                            </div>
+                            <h1 class="hero-title">
+                                <span data-content="hero.titleLineOne">Suphal</span>
+                                <span class="hero-title-accent" data-content="hero.titleLineTwo">Bhattarai</span>
+                            </h1>
+                            <p class="hero-subtitle" data-content="hero.subtitle">Chartered Accountant Candidate | BBS 4th Year Student</p>
+                            <p class="hero-copy" data-content="hero.copy">Bridging the gap between classical financial stewardship and modern digital auditing. Pursuing precision in the ledger and innovation in the ecosystem.</p>
+                            <div class="hero-actions">
+                                <a class="button-primary" data-content="hero.primaryCta" href="achievements.html">View My Work</a>
+                                <a class="button-secondary" data-content="hero.secondaryCta" href="cv.html">Download CV</a>
+                            </div>
+                        </div>
+
+                        <div class="hero-visual">
+                            <div class="hero-image-frame">
+                                <img alt="Portrait of Suphal Bhattarai" class="hero-image" src="images/profile.jpeg">
+                            </div>
+                            <aside class="focus-card reveal" aria-label="Academic focus">
+                                <p class="focus-label" data-content="focus.label">Academic Focus</p>
+                                <p class="focus-title" data-content="focus.title">BBS Program</p>
+                                <div class="focus-metrics">
+                                    <div>
+                                        <span class="focus-value" data-runtime-content="focus.metricValue">1.3</span>
+                                        <span data-content="focus.metricLabel">Years of experience</span>
+                                    </div>
+                                    <div>
+                                        <span class="focus-value" data-content="focus.metricValueAlt">8</span>
+                                        <span data-content="focus.metricLabelAlt">Sectors covered</span>
+                                    </div>
+                                </div>
+                            </aside>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-dark reveal" id="expertise">
+                <div class="container">
+                    <div class="section-head">
+                        <div>
+                            <h2 class="section-title" data-content="expertise.heading">Domain Expertise</h2>
+                            <p class="section-copy" data-content="expertise.copy">Key areas of interest and professional specialization.</p>
+                        </div>
+                        <div class="section-index" data-content="expertise.index">01 // Proficiency</div>
+                    </div>
+
+                    <div class="expertise-grid">
+                        <article class="expertise-card">
+                            <span class="material-symbols-outlined" aria-hidden="true">payments</span>
+                            <h3 class="expertise-title" data-content="cards.0.title">Finance</h3>
+                            <p class="expertise-copy" data-content="cards.0.copy">Strategic capital allocation and advanced corporate financial modeling.</p>
+                        </article>
+                        <article class="expertise-card">
+                            <span class="material-symbols-outlined" aria-hidden="true">fact_check</span>
+                            <h3 class="expertise-title" data-content="cards.1.title">Audit</h3>
+                            <p class="expertise-copy" data-content="cards.1.copy">Systematic examination of financial records with uncompromising integrity.</p>
+                        </article>
+                        <article class="expertise-card">
+                            <span class="material-symbols-outlined" aria-hidden="true">account_balance</span>
+                            <h3 class="expertise-title" data-content="cards.2.title">Banking</h3>
+                            <p class="expertise-copy" data-content="cards.2.copy">In-depth understanding of institutional liquidity and risk management.</p>
+                        </article>
+                        <article class="expertise-card">
+                            <span class="material-symbols-outlined" aria-hidden="true">terminal</span>
+                            <h3 class="expertise-title" data-content="cards.3.title">FinTech &amp; IT</h3>
+                            <p class="expertise-copy" data-content="cards.3.copy">Leveraging automated systems and data analytics for financial insight.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="ticker reveal" aria-label="Editorial statements">
+                <div class="container">
+                    <div class="ticker-track">
+                        <span class="ticker-item" data-content="ticker.0">Precision in Every Entry</span>
+                        <span class="ticker-item ticker-item-accent" data-content="ticker.1">Living for fun</span>
+                        <span class="ticker-item" data-content="ticker.2">Finding solutions</span>
+                        <span class="ticker-item ticker-item-accent" data-content="ticker.3">Audit Excellence</span>
+                        <span class="ticker-item" data-content="ticker.4">Precision in Every Entry</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer reveal">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand" data-content="footer.brand">Suphal Bhattarai</div>
+                    <div class="footer-links">
+                        <a class="footer-link" data-content="footer.links.0" href="index.html">Home</a>
+                        <a class="footer-link" data-content="footer.links.1" href="about.html">About</a>
+                        <a class="footer-link" data-content="footer.links.2" href="achievements.html">Achievements</a>
+                        <a class="footer-link" data-content="footer.links.3" href="cv.html">CV</a>
+                        <a class="footer-link" data-content="footer.links.4" href="contact.html">Contact</a>
+                    </div>
+                    <div class="footer-meta" data-content="footer.meta">Formal audit perspective with structured technical work.</div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/content-binding.js"></script>
+    <script>
+        document.documentElement.classList.add("js");
+
+        /*
+         * Centralized editable content for the home page.
+         * Future copy edits should start here instead of searching through the markup.
+         */
+        const pageContent = {
+            nav: {
+                brand: "Suphal Bhattarai",
+                home: "Home",
+                about: "About",
+                achievements: "Achievements",
+                cv: "CV",
+                contact: "Contact",
+                cta: "Hire Me"
+            },
+            hero: {
+                status: "Available for Job",
+                titleLineOne: "Suphal",
+                titleLineTwo: "Bhattarai",
+                subtitle: "Chartered Accountant Candidate | BBS 4th Year Student",
+                copy: "Bridging the gap between classical financial stewardship and modern digital auditing. Pursuing precision in the ledger and innovation in the ecosystem.",
+                primaryCta: "View My Work",
+                secondaryCta: "Download CV"
+            },
+            focus: {
+                label: "Academic Focus",
+                title: "BBS Program",
+                metricValue: "",
+                metricLabel: "Years of experience",
+                metricValueAlt: "8",
+                metricLabelAlt: "Sectors covered"
+            },
+            expertise: {
+                heading: "Domain Expertise",
+                copy: "Key areas of interest and professional specialization.",
+                index: "01 // Proficiency"
+            },
+            cards: [
+                {
+                    title: "Finance",
+                    copy: "Strategic capital allocation and advanced corporate financial modeling."
+                },
+                {
+                    title: "Audit",
+                    copy: "Systematic examination of financial records with uncompromising integrity."
+                },
+                {
+                    title: "Banking",
+                    copy: "In-depth understanding of institutional liquidity and risk management."
+                },
+                {
+                    title: "FinTech & IT",
+                    copy: "Leveraging automated systems and data analytics for financial insight."
+                }
+            ],
+            ticker: [
+                "Precision in Every Entry",
+                "Living for fun",
+                "Finding solutions",
+                "Audit Excellence",
+                "Precision in Every Entry"
+            ],
+            footer: {
+                brand: "Suphal Bhattarai",
+                links: ["Home", "About", "Achievements", "CV", "Contact"],
+                meta: "Formal audit perspective with structured technical work."
+            }
+        };
+
+        /*
+         * Trigger the hero entrance once the browser has painted the initial layout.
+         * Keeping this separate from content injection avoids racing the first render.
+         */
+        function runHeroEntrance() {
+            window.requestAnimationFrame(() => {
+                document.body.classList.add("page-ready");
+            });
+        }
+
+        /*
+         * Reveal lower sections as they enter the viewport.
+         * This keeps motion limited to major blocks instead of animating every small element.
+         */
+        function setupScrollReveals() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("reveal-visible");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.16
+            });
+
+            document.querySelectorAll(".reveal").forEach((node) => {
+                observer.observe(node);
+            });
+        }
+
+        /*
+         * Calculate elapsed experience from January 2024 in decimal years using the visitor's local date.
+         * This keeps the headline metric current on a static site without any backend support.
+         */
+        function updateExperienceMetric() {
+            const experienceNode = document.querySelector("[data-runtime-content='focus.metricValue']");
+
+            if (!experienceNode) {
+                return;
+            }
+
+            const startDate = new Date(2024, 0, 1);
+            const today = new Date();
+            const elapsedMilliseconds = Math.max(today.getTime() - startDate.getTime(), 0);
+            const elapsedYears = elapsedMilliseconds / (365.25 * 24 * 60 * 60 * 1000);
+
+            experienceNode.textContent = elapsedYears.toFixed(1);
+        }
+
+        window.editorialContent.bindPageContent(pageContent);
+        updateExperienceMetric();
+        runHeroEntrance();
+        setupScrollReveals();
+    </script>
+</body>
 </html>
