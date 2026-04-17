@@ -5,6 +5,8 @@ module.exports = {
         targetOpportunities: "Banking, finance, and IT opportunities",
         domain: "https://suphalbhattarai.com.np",
         githubPagesUrl: "https://SuphalBhattarai.github.io/portfolio",
+        shareImage: "images/design.jpeg",
+        twitterCard: "summary_large_image",
         portrait: {
             src: "images/profile.jpeg",
             alt: "Portrait of Suphal Bhattarai"

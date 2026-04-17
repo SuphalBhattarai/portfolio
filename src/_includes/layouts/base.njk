@@ -1,4 +1,7 @@
 {% set pageData = pages[activePage] %}
+{% set canonicalPath = "/" if activePage == "home" else "/" + profile.links[activePage] %}
+{% set canonicalUrl = profile.site.domain + canonicalPath %}
+{% set shareImageUrl = profile.site.domain + "/" + profile.site.shareImage %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +9,17 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>{{ pageData.title or site.name }}</title>
     <meta content="{{ pageData.description or site.description }}" name="description">
+    <link href="{{ canonicalUrl }}" rel="canonical">
+    <meta content="{{ pageData.title or site.name }}" property="og:title">
+    <meta content="{{ pageData.description or site.description }}" property="og:description">
+    <meta content="{{ canonicalUrl }}" property="og:url">
+    <meta content="website" property="og:type">
+    <meta content="{{ profile.site.name }}" property="og:site_name">
+    <meta content="{{ shareImageUrl }}" property="og:image">
+    <meta content="{{ profile.site.twitterCard }}" name="twitter:card">
+    <meta content="{{ pageData.title or site.name }}" name="twitter:title">
+    <meta content="{{ pageData.description or site.description }}" name="twitter:description">
+    <meta content="{{ shareImageUrl }}" name="twitter:image">
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..800;1,6..72,400..800&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
@@ -116,5 +130,27 @@
             }
         }());
     </script>
+    {% if activePage == "home" %}
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "{{ profile.site.name }}",
+            "jobTitle": "{{ profile.site.roleTitle }}",
+            "url": "{{ profile.site.domain }}",
+            "image": "{{ profile.site.domain }}/{{ profile.site.portrait.src }}",
+            "email": "{{ profile.links.emailHref }}",
+            "telephone": "{{ profile.contact.phone }}",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "{{ profile.contact.address }}"
+            },
+            "sameAs": [
+                "{{ profile.social.linkedin.href }}",
+                "{{ profile.social.github.href }}"
+            ]
+        }
+    </script>
+    {% endif %}
 </body>
 </html>
