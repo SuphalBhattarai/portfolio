@@ -27,6 +27,26 @@
                 node.textContent = value;
             }
         });
+
+        /*
+         * Attribute bindings keep shared URLs, image sources, labels, and accessibility strings
+         * in the same content model as the visible text.
+         */
+        [
+            { attribute: "href", hook: "data-attr-href" },
+            { attribute: "src", hook: "data-attr-src" },
+            { attribute: "alt", hook: "data-attr-alt" },
+            { attribute: "aria-label", hook: "data-attr-aria-label" }
+        ].forEach(function (binding) {
+            document.querySelectorAll("[" + binding.hook + "]").forEach(function (node) {
+                var key = node.getAttribute(binding.hook);
+                var value = getValueByPath(content, key);
+
+                if (typeof value === "string") {
+                    node.setAttribute(binding.attribute, value);
+                }
+            });
+        });
     }
 
     /*
